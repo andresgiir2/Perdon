@@ -1,0 +1,46 @@
+body {
+    background-color: #000; /* Fondo oscuro */
+    color: #ff69b4; /* Color rosado */
+    font-family: 'Courier New', Courier, monospace; /* Fuente tipo monoespaciada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    margin: 0;
+}
+
+.led-text {
+    text-shadow:
+        0 0 5px #ff69b4,
+        0 0 10px #ff69b4,
+        0 0 15px #ff69b4,
+        0 0 20px #ff69b4; /* Efecto de brillo */
+    font-size: 5vw; /* Tamaño de letra adaptable */
+    overflow: hidden; /* Oculta el desbordamiento */
+    border-right: 4px solid #ff69b4; /* Cursor parpadeante */
+    animation: blink 0.7s step-end infinite; /* Animación del cursor */
+    max-width: 90%; /* Ancho máximo para el contenedor */
+    text-align: center; /* Centrar el texto */
+    display: inline-block; /* Permitir que el texto ocupe solo el espacio necesario */
+    word-wrap: break-word; /* Permitir saltos de línea */
+    overflow-wrap: break-word; /* Permitir saltos de línea en palabras largas */
+}
+
+@keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #ff69b4; }
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media (max-width: 768px) {
+    .led-text {
+        font-size: 8vw; /* Tamaño de letra más grande en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .led-text {
+        font-size: 10vw; /* Tamaño de letra aún más grande en pantallas muy pequeñas */
+        max-width: 95%; /* Ajustar ancho máximo para dispositivos pequeños */
+    }
+}
